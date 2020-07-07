@@ -12,12 +12,12 @@ int main(void) {
 
 
 	//ファイル入出力
-	FILE* fi1, * fi2, * fi3,  * fo1, * fo2;
+	FILE* fi1, * fi2, * fi3;
 	char std1[255],std2[255],std3[255];
 	Mag a;
 	int result;
 
-	fprintf_s(stdout, "今から診断テストを始めます。\n３つの質問に(1,2,3のいずれかで)回答してください。\n\n");
+	fprintf_s(stdout, "\n今から診断テストを始めます。\n３つの質問に(1,2,3のいずれかで)回答してください。\n\n");
 
 	
 	//質問１
@@ -71,9 +71,18 @@ int main(void) {
 
 	//出力結果の計算
 	result = ((a.Ans1 * 9) + (a.Ans2 * 3) + (a.Ans3));
-	
-	fprintf_s(stdout, "%d\n\n",result);
 
+	//intとcharの変換
+	int A = result / 10;
+	int B = result % 10;
+
+	char Result[2];		//これがキーワードの時の値を出力したい
+
+	Result[0] = A + '0';
+	Result[1] = B + '0';
+
+	
+	fprintf_s(stdout, "%c%c\n\n",Result[0],Result[1]);
 
 
 	//iniファイル、charの読み込み
@@ -90,13 +99,14 @@ int main(void) {
 	sprintf_s(settingFile, "setting.ini", currentDirectory);
 
 	//char読み込み関数
-	if (GetPrivateProfileString(section, "13", "fault", keyValue, CHARBUFF, settingFile) != 0) {
-		fprintf_s(stdout, "%s , %s\n", settingFile, keyValue);
+	if (GetPrivateProfileString(section, Result, "none", keyValue, CHARBUFF, settingFile) != 0) {
+		fprintf_s(stdout, "あなたにおすすめの漫画は：%s です\n",keyValue);
 	}
-	/*else {
-		fprintf_s(stdout, "%s doesn't contain[%s]%s\n", settingFile, section, keyWord);
+	else {
+		fprintf_s(stdout, "%s doesn't contain[%s]%s\n", settingFile, section, Result);
 	}
-	*/
+	
+
 	return 0;
 
 

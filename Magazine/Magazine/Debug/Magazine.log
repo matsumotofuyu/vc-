@@ -1,6 +1,4 @@
 ﻿  Magazine.cpp
-C:\Users\totoa\source\repos\Magazine\Magazine\Magazine.cpp(90,40): warning C4474: 'sprintf_s': 書式文字列に渡された引数の数が多すぎます
-C:\Users\totoa\source\repos\Magazine\Magazine\Magazine.cpp(90,40): message : プレースホルダーとそのパラメーターには 0 の可変個引数が必要ですが、1 が指定されています。
-C:\Users\totoa\source\repos\Magazine\Magazine\Magazine.cpp(15,37): warning C4101: 'fo2': ローカル変数は 1 度も使われていません。
-C:\Users\totoa\source\repos\Magazine\Magazine\Magazine.cpp(15,30): warning C4101: 'fo1': ローカル変数は 1 度も使われていません。
+C:\Users\totoa\source\repos\Magazine\Magazine\Magazine.cpp(99,40): warning C4474: 'sprintf_s': 書式文字列に渡された引数の数が多すぎます
+C:\Users\totoa\source\repos\Magazine\Magazine\Magazine.cpp(99,40): message : プレースホルダーとそのパラメーターには 0 の可変個引数が必要ですが、1 が指定されています。
   Magazine.vcxproj -> C:\Users\totoa\source\repos\Magazine\Debug\Magazine.exe
